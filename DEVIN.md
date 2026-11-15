@@ -20,5 +20,5 @@ Mirror of [GoogleChrome/modern-web-guidance](https://github.com/GoogleChrome/mod
 1. `git fetch https://github.com/GoogleChrome/modern-web-guidance main` and merge into a branch.
 2. Get the new npm version (`npm view modern-web-guidance version`). Run `npm pack modern-web-guidance@<v>` and confirm `skills/modern-web-guidance/skill-version.txt` matches the `--skill-version` in `SKILL.md`.
 3. Reapply the changes above: replace every `@latest` with `@<v>`, keep `DISABLE_TELEMETRY=1`, keep `chrome-extensions` removed.
-4. Check: `DISABLE_TELEMETRY=1 npx -y modern-web-guidance@<v> search "light dismiss dialog" --skill-version <ver>` returns results.
+4. Check from a directory outside this repo (inside it, `npx` resolves the local package, which has no CLI): `DISABLE_TELEMETRY=1 npx -y modern-web-guidance@<v> search "light dismiss dialog" --skill-version <ver>` returns results.
 5. Update the pins above, open a PR, merge, then move the `devin-v*` tag. Both orgs install from that tag.
